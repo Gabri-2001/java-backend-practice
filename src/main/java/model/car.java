@@ -7,11 +7,11 @@ public class car {
     private String brand;
     private String model;
     private String year;
-
-
-
     private String licensePlate;
     private String mileage;
+
+    private CarStatus status;
+    private FuelType fuelType;
 
     private double price;
 
@@ -20,13 +20,15 @@ public class car {
         //required by frameworks
     }
 
-    public car(String brand, String model, String year, String licensePlate, String mileage, double price) {
+    public car(String brand, String model, String year, String licensePlate, String mileage, double price, CarStatus status, FuelType fuelType) {
         this.brand = brand;
         this.model = model;
         this.year = year;
         this.licensePlate = licensePlate;
         this.mileage = mileage;
         this.price = price;
+        this.status = status.AVAILABLE;
+        this.fuelType = fuelType;
     }
 
     public Long getId(){
@@ -63,5 +65,17 @@ public class car {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public CarStatus getStatus() {
+        return status;
+    }
+
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+
+    public void setStatus(CarStatus status) {
+        this.status = status;
     }
 }
